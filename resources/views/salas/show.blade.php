@@ -32,9 +32,15 @@
                 </ul>
             </div>
             @if (count($sala->videos))
-            <div class="ratio ratio-16x9">
-                <iframe src="https://www.youtube.com/embed/{{ $sala->videos[0]->id_youtube() }}" allowfullscreen></iframe>
-            </div>
+                @if ($video)
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/{{ $video->id_youtube() }}" allowfullscreen></iframe>
+                </div>
+                @else
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/{{ $sala->videos[0]->id_youtube() }}" allowfullscreen></iframe>
+                </div>
+                @endif
             @else
             <div class="card-body d-flex justify-content-center flex-column">
                 <h3 class="card-title">Esta sala está vazia</h3>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sala;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class SalaController extends Controller
@@ -18,10 +19,14 @@ class SalaController extends Controller
         return redirect('/sala/' . $sala->uuid);
     }
 
-    public function show($uuid) {
+    public function show($uuid, $videoid = null) {
         $sala = Sala::where('uuid', $uuid)->first();
         if ($sala) {
-            return view('salas.show', compact('sala'));
+            if ($videoid) {
+                $video = Video::where('id', $videoid)->first();
+                return view('salas.show', compact('sala'), compact('video'));
+            }
+            return view('salas.show', compact('sala'), ['video' => null]);
         } else {
             return view('salas.login', ['uuid' => $uuid])->withErrors('Sala não encontrada');
         }

@@ -1,6 +1,6 @@
 <ul class="list-group list-group-flush">
     @foreach ($sala->videos as $video)
-    <li class="list-group-item d-flex justify-content-around align-items-center px-0">
+    <a href="{{ url('/') . '/sala/' . $sala->uuid . '/' . $video->id }}" class="list-group-item d-flex justify-content-around align-items-center px-0">
         <img width="auto" height="50" src="https://img.youtube.com/vi/{{ $video->id_youtube() }}/0.jpg" width="50px" height="100%">
         <div> https://youtu.be/{{ $video->id_youtube() }}</div>
         <div>
@@ -15,6 +15,6 @@
                 </button>
             </form>
         </div>
-    </li>
+    </a>
     @endforeach
 </ul>
