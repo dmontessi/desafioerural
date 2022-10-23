@@ -13,8 +13,9 @@ Aplicação desenvolvida em Laravel v9.36.4 (PHP v8.1.4)
 
 ￼<img width="196" alt="Captura de Tela 2022-10-23 às 15 34 45" src="https://user-images.githubusercontent.com/22962293/197414700-610b481a-f648-4cc7-8729-6554c128b2ce.png">
 
-4. Rodar o comando “composer update”
-5. Rodar o comando “nom install & npm run build”
+4. Na raiz do projeto, rodar o comando “composer update”
+5. Na raiz do projeto, rodar o comando “npm install & npm run build”
+6. Na raiz do projeto, rodar o comando “php artisan migrate"
 6. A aplicação já estará disponível para ser testada na url “http://localhost/desafioerural/public”
 
  
