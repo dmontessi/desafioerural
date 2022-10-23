@@ -29,7 +29,10 @@ class SalaController extends Controller
 
     public function find(Request $request)
     {
-        $sala = Sala::where('uuid', $request->uuid)->first();
+        $explode = explode('/', $request->uuid);
+        $uuid = end($explode);
+        $sala = Sala::where('uuid', $uuid)->first();
+
         if ($sala)
             return redirect('/sala/' . $sala->uuid);
         else

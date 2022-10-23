@@ -30,4 +30,9 @@ class Sala extends Model
             $model->uuid = Str::uuid();
         });
     }
+
+    public function videos()
+    {
+        return $this->hasMany(Video::class);
+    }
 }
